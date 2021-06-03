@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+
+    <!--font awesome link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+    <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+      <a href="index.html" class="logo"><span>BERLIN</span>spots</a>
+     
+      <nav class="navbar">
+         <a href="index.html">home</a>
+         <a href="#gallery">gallery</a>
+         <a href="index.html#contact">contact</a>
+         <a href="#tips">tips</a>
+         <a href="#events">events</a>
+         <a href="#about-us">about-us</a>
+         <a href="#markets">markets</a>
+        
+      </nav>
+    
+    
+      <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <i class="fas fa-user" id="login-btn"></i>
+    </div>
+    
+    <form action="" class="search-bar-container">
+        <!-- <input type="search" id="search-bar" placeholder="search here..."> -->
+        <!-- <label for="search-bar" class="fas fa-search"></label> -->
+    </form>
+    
+    </header> 
+
+
+
+    
+<div class="gallery">
+
+    <ul class="controls">
+        <li class="buttons active" data-filter="all">all</li>
+        <li class="buttons" data-filter="Gate"> Gate</li>
+        <li class="buttons" data-filter="Tower"> Tower</li>
+        <li class="buttons" data-filter="Reichstag"> Reichstag</li>
+        <li class="buttons" data-filter="Berlin Wall">Berlin Wall 
+        </li>
+        <li class="buttons" data-filter="Museum Berlin"> Museum Berlin</li>
+    </ul>
+
+    <div class="image-container">
+
+        <a href="images/berliner-dom-4.jpeg" class="image Gate">
+            <img src="images/berliner-dom-4.jpeg" alt="">
+        </a>
+        <a href="images/berlin-reichstag-outside.jpeg" class="image Gate">
+            <img src="images/berlin-reichstag-outside.jpeg" alt="">
+        </a>
+        <a href="images/berlin_cathedral.jpeg" class="image Gate">
+            <img src="images/ice-cream3.jpg" alt="">
+        </a>
+
+        <a href="images/chocolate1.jpg" class="image Tower">
+            <img src="images/chocolate1.jpg" alt="">
+        </a>
+        <a href="images/chocolate2.jpg" class="image Tower">
+            <img src="images/chocolate2.jpg" alt="">
+        </a>
+
+        <a href="images/cake1.jpg" class="image Reichstag">
+            <img src="images/cake1.jpg" alt="">
+        </a>
+        <a href="images/cake2.jpg" class="image Reichstag">
+            <img src="images/cake2.jpg" alt="">
+        </a>
+        <a href="images/cake3.jpg" class="image Reichstag">
+            <img src="images/cake3.jpg" alt="">
+        </a>
+        <a href="images/cake4.jpg" class="image Reichstag">
+            <img src="images/cake4.jpg" alt="">
+        </a>
+        <a href="images/cake5.jpg" class="image Reichstag">
+            <img src="images/cake5.jpg" alt="">
+        </a>
+
+        <a href="images/juice1.jpg" class="image Berlin Wall">
+            <img src="images/juice1.jpg" alt="">
+        </a>
+        <a href="images/juice2.jpg" class="image Berlin Wall">
+            <img src="images/juice2.jpg" alt="">
+        </a>
+        <a href="images/juice3.jpg" class="image Berlin Wall">
+            <img src="images/juice3.jpg" alt="">
+        </a>
+
+        <a href="images/sandwich1.jpg" class="Museum Berlin">
+            <img src="images/sandwich1.jpg" alt="">
+        </a>
+        <a href="images/sandwich2.jpg" class="Museum Berlin">
+            <img src="images/sandwich2.jpg" alt="">
+        </a>
+        <a href="images/sandwich3.jpg" class="Museum Berlin">
+            <img src="images/sandwich3.jpg" alt="">
+        </a>
+        <a href="images/sandwich4.jpg" class="Museum Berlin">
+            <img src="images/sandwich4.jpg" alt="">
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- magnific popup js cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+    
+
+$(document).ready(function(){
+
+    $('.buttons').click(function(){
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        var filter = $(this).attr('data-filter')
+
+        if(filter == 'all'){
+            $('.image').show(400);
+        }else{
+            $('.image').not('.'+filter).hide(200);
+            $('.image').filter('.'+filter).show(400);
+        }
+
+    });
+
+    $('.gallery').magnificPopup({
+
+        delegate:'a',
+        type:'image',
+        gallery:{
+            enabled:true
+        }
+
+    });
+
+});
+
+</script>
+
+<!-- footer section  -->
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>about us</h3>
+            <p></p>
+        </div>
+        <div class="box">
+            <h3>Legal</h3>
+            <a href="#">privacy policy</a>
+            <a href="#">term of use</a>
+            <a href="#">cookie policy</a>
+            
+        </div>
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#">home</a>
+            <a href="#">book</a>
+            <a href="#">services</a>
+            <a href="gallery.html">gallery</a>
+            <a href="#">contact</a>
+        </div>
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">instagram</a>
+            <a href="#">twitter</a>
+            <a href="#">linkedin</a>
+        </div>
+
+    </div>
+
+    <h1 class="credit"> Redi project group <span> </span> | all rights reserved! </h1>
+
+</section>
+
+
+    
+</body>
+</html>
